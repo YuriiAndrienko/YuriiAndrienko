@@ -1,0 +1,116 @@
+/*Программа по площади треугольника*/
+#include<cmath>
+#include <iostream>
+
+int main()
+{
+    setlocale(LC_ALL, "Russian");
+    std::cout << "Программа вичисляет площадь треугольника по таким формулам\n\n";
+    int i;
+    std::cout << "Формула 1 -> S = кв.корень из (p*(p-a)*(p-b)*(p-c))\n";
+    std::cout << "Формула 2 -> S = 1/2*a*b*sinY\n";
+    std::cout << "Формула 3 -> S = a*b*c/4*R\n";
+    std::cout << "Формула 4 -> S = p*r\n";
+    std::cout << "Формула 5 -> S = 1/2*b*h\n\n";
+    std::cout << "Выберете формулу\n";
+    std::cout << "Для выбора формулы номер 1 нажмите '1'\n";
+    std::cout << "Для выбора формулы номер 2 нажмите '2'\n";
+    std::cout << "Для выбора формулы номер 3 нажмите '3'\n";
+    std::cout << "Для выбора формулы номер 4 нажмите '4'\n";
+    std::cout << "Для выбора формулы номер 5 нажмите '5'\n";
+    std::cin >> i;
+    std::cout << "\n";
+
+    if (i == 1) {
+        double p, bB, a, c;
+        std::cout << "введите полупериметр -> ";
+        std::cin >> p;
+        std::cout << "\n";
+
+        std::cout << "введите сторону а -> ";
+        std::cin >> a;
+        std::cout << "\n";
+
+        std::cout << "введите сторону б -> ";
+        std::cin >> bB;
+        std::cout << "\n";
+
+        std::cout << "введите сторону с -> ";
+        std::cin >> c;
+        std::cout << "\n";
+
+        double m, x, l;
+        m = p - a;
+        x = p - bB;
+        l = p - c;
+
+        double Ss;
+        Ss = sqrt(p * m * x * l);
+        std::cout << "площадь вашего треугольника = " << Ss;
+        std::cout << "\n";
+    }
+
+    if (i == 2) {
+        std::cout << "Введите угол (в градусах) -> ";
+        double aaa, b_b, Sin, SSSS, iI;
+        std::cin >> iI;
+        std::cout << "\n";
+
+        std::cout << "Введите сторону a (в см) -> ";
+        std::cin >> aaa;
+        std::cout << "\n";
+
+        std::cout << "Введите сторону б (в см) -> ";
+        std::cin >> b_b;
+        std::cout << "\n";
+
+        Sin = sin(iI * 3.14159265 / 180);
+        SSSS = 0.5 * aaa * b_b * Sin;
+        std::cout << "Площадь вашего треугольника ровна = " << SSSS << " квадратных см\n\n";
+    }
+
+    if (i == 3){
+        std::cout << "Введите сторону а (в см) -> ";
+        double SS, aa, bb, cc, RR;
+        std::cin >> aa;
+        std::cout << "\n";
+        std::cout << "Введите сторону б (в см) -> ";
+        std::cin >> bb;
+        std::cout << "\n";
+        std::cout << "Введите сторону с (в см) -> ";
+        std::cin >> cc;
+        std::cout << "\n";
+        std::cout << "Введите радиус описаного в треугольник круга (в см) -> ";
+        std::cin >> RR;
+        std::cout << "\n";
+
+        SS = (aa * bb * cc) / (4 * RR);
+        std::cout << "Площадь вашего треугольника " << SS << " кв. сантиметров\n";
+    }
+
+    if (i == 4){
+        std::cout << "Введите полупериметр треугольника (в см) -> ";
+        double SSS, ppp, rrr;
+        std::cin >> ppp;
+        std::cout << "\n";
+        std::cout << "Введите радиус вписаного в треугольник круга (в см) -> ";
+        std::cin >> rrr;
+        std::cout << "\n";
+
+        SSS = ppp * rrr;
+        std::cout << "Периметр вашего треугольника " << SSS << " кв.сантиметров\n";
+    }
+    
+    if (i == 5) {
+        std::cout << "Введите основу треугольник в см -> ";
+        double a1, h1, S1;
+        std::cin >> a1;
+        std::cout << "\n";
+        std::cout << "Введите высоту проведённую к этой основе -> ";
+        std::cin >> h1;
+        std::cout << "\n";
+
+        S1 = 0.5 * a1 * h1;
+        std::cout << "Площадь вашего треугольника " << S1 << " кв.сантиметров\n";
+    }
+}
